@@ -1,10 +1,12 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
-import {NavbarComponent} from './navbar.component';
-import {ToolbarComponent} from './toolbar.component';
-import {NameListService} from '../shared/index';
-import {HomeComponent} from '../+home/index';
-import {AboutComponent} from '../+about/index';
+import {Component} from "angular2/core";
+import {ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
+import {NavbarComponent} from "./navbar.component";
+import {ToolbarComponent} from "./toolbar.component";
+import {NameListService} from "../shared/index";
+import {HomeComponent} from "../+home/index";
+import {AboutComponent} from "../+about/index";
+import {CGTabSetSample} from "../cg-tabset/cg-tabset-sample";
+import {CGDropdownDemo} from "../cg-tabset/cg-dropdown-sample";
 
 @Component({
   selector: 'sd-app',
@@ -13,15 +15,10 @@ import {AboutComponent} from '../+about/index';
   directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]
 })
 @RouteConfig([
-  {
-    path: '/',
-    name: 'Home',
-    component: HomeComponent
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: AboutComponent
-  }
+  {path: '/', name: 'Home', component: HomeComponent},
+  {path: '/cg-tabset', name: 'Cg-tabset', component: CGTabSetSample},
+  {path: '/cg-dropdown', name: 'Cg-dropdown', component: CGDropdownDemo},
+  {path: '/about', name: 'About', component: AboutComponent}
 ])
-export class AppComponent {}
+export class AppComponent {
+}
