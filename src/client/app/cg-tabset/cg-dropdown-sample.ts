@@ -9,45 +9,20 @@ import {NameCodeItem} from "../../component/name-code-item";
   selector: 'cg-dropdown-sample',
   directives: [CGDropDown],
   template: `
-  
-  <cg-drop-down [options]="items" (selected)="selected($event)">
-  
-</cg-drop-down>
+<cg-drop-down [items]="selectItems" [(selectedItem)]="itemToSelect" [nullItem]="nullObject" [disabled]="false" ></cg-drop-down>
   `
 })
 export class CGDropdownDemo {
-  private value:any = {};
-  private _disabledV:string = '0';
-  private disabled:boolean = false;
-  private items:Array<NameCodeItem> = [
-    new NameCodeItem(1,"code1","name1"),
-    new NameCodeItem(2,"code2","name2"),
-    new NameCodeItem(3,"code3"),
-    new NameCodeItem(4)
+  private nullObject:NameCodeItem =new NameCodeItem("null","--Any--");
+  private selectItems:Array<NameCodeItem> = [
+    new NameCodeItem("code1","name1"),
+    new NameCodeItem("code2","name2"),
+    new NameCodeItem("code3"),
   ];
+  itemToSelect = this.selectItems[1];
 
-  private get disabledV():string {
-    return this._disabledV;
+  constructor() {
+    console.clear();
   }
 
-  private set disabledV(value:string) {
-    this._disabledV = value;
-    this.disabled = this._disabledV === '1';
-  }
-
-  private selected(value:any) {
-    console.log('Selected value is: ', value);
-  }
-
-  private removed(value:any) {
-    console.log('Removed value is: ', value);
-  }
-
-  private typed(value:any) {
-    console.log('New search input: ', value);
-  }
-
-  private refreshValue(value:any) {
-    this.value = value;
-  }
 }

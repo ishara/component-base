@@ -1,5 +1,5 @@
-import {AfterContentInit, QueryList, Component, Query} from "angular2/core";
-import {CGTab} from "./cg-tab";
+import {AfterContentInit, QueryList, Component, Query} from 'angular2/core';
+import {CGTab} from './cg-tab';
 /**
  * Created by ishara on 22/04/2016.
  */

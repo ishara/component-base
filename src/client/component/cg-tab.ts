@@ -1,11 +1,10 @@
-import {Input, Component} from "angular2/core";
+import {Input, Component} from 'angular2/core';
 /**
  * Created by ishara on 22/04/2016.
  */
 
 @Component({
   selector: 'cg-tab',
-  inputs: ['title'],
   template: `
   <div class="ui bottom attached tab segment"
        [class.active]="active">
